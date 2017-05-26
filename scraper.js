@@ -41,12 +41,12 @@ function fetchPage(url, callback) {
 
 function run(db) {
 	// Use request to read in pages.
-	fetchPage("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=USD&date=20161215&json", function (body) {
+	fetchPage("https://public.api.openprocurement.org/api/2.3/plans?offset=2017-02-15T20:02:36.117208+02:00", function (body) {
 		// Use cheerio to find things in the page with css selectors.
 		
 		console.log(body)
 		
-			updateRow(db, body);
+		updateRow(db, body);
 		
 
 		readRows(db);
